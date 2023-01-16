@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,12 @@ namespace TestSeleniumTraining.Elements
         private readonly By radioButtonYes = By.CssSelector("label[for='yesRadio']");
         private readonly By radioButtonImpressive = By.CssSelector("label[for='impressiveRadio']");
         private readonly By radioButtonNo = By.CssSelector("label[for='noRadio']");
+
+        private readonly By buttonsMenu = By.XPath("//span[normalize-space()='Buttons']");
+        private readonly By doubleClick = By.CssSelector("#doubleClickBtn");
+        private readonly By rightClick = By.CssSelector("#rightClickBtn");
+        private readonly By ClickMe = By.XPath("(//button[normalize-space()='Click Me'])[1]");
+
         public ElementsMenu(IWebDriver driver)
         {
             this.driver = driver;
@@ -80,5 +87,33 @@ namespace TestSeleniumTraining.Elements
             
             return this;
         }
+        public ElementsMenu ButtonsMenu()
+        {
+            driver.FindElement(buttonsMenu).Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+
+            Actions actionsDoubleClick = new Actions(driver);
+            actionsDoubleClick.DoubleClick(driver.FindElement(doubleClick)).Perform();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Assert.IsTrue(driver.FindElement(By.CssSelector("#doubleClickMessage")).Displayed);
+            return this;
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Actions actionsRightClickMe = new Actions(driver);
+            actionsRightClickMe.ContextClick(driver.FindElement(rightClick)).Perform();
+            Assert.IsTrue(driver.FindElement(By.CssSelector("#rightClickMessage")).Displayed);
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.FindElement(ClickMe).Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Assert.IsTrue(driver.FindElement(By.CssSelector("#dynamicClickMessage")).Displayed);
+
+            return this;
+        }
+
+        
+        
+
+        
     }
 }

@@ -19,29 +19,36 @@ namespace TestSeleniumTraining
 
         }
 
-       /* [Test]
-        public void ElementsTextBoxTest()
-        {
-            var elements = new ElementsMenu(driver)
-                .ChooseElementsMenu()
-                .FillTextBoxMenu();
-            driver.Close();
-        }
-       /* [Test]
-        public void ElementsCheckBoxTest()
-        {
-            var elements = new ElementsMenu(driver)
-                .ChooseElementsMenu()
-                .ChooseCheckBoxMenu()
-                .FillCheckBoxMenu();
-            driver.Close();
-        }*/
+        /* [Test]
+         public void ElementsTextBoxTest()
+         {
+             var elements = new ElementsMenu(driver)
+                 .ChooseElementsMenu()
+                 .FillTextBoxMenu();
+             driver.Close();
+         }
+        /* [Test]
+         public void ElementsCheckBoxTest()
+         {
+             var elements = new ElementsMenu(driver)
+                 .ChooseElementsMenu()
+                 .ChooseCheckBoxMenu()
+                 .FillCheckBoxMenu();
+             driver.Close();
+         }
+         [Test]
+         public void ElementsRadioButtonMenu()
+         {
+             var elements = new ElementsMenu(driver)
+                 .ChooseElementsMenu()
+                 .RadioButton();
+         }*/
         [Test]
-        public void ElementsRadioButtonMenu()
+        public void ElementsButtonMenu()
         {
             var elements = new ElementsMenu(driver)
                 .ChooseElementsMenu()
-                .RadioButton();
+                .ButtonsMenu();
         }
 
         [TearDown]
