@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestSeleniumTraining.Elements
 {
-    internal class EMTextBox
+    internal class EMTextBoxMenu
     {
         public IWebDriver driver;
          
@@ -19,17 +19,18 @@ namespace TestSeleniumTraining.Elements
         private readonly By clickOnSubmit = By.CssSelector("#submit");
 
 
-        public EMTextBox(IWebDriver driver)
+        public EMTextBoxMenu(IWebDriver driver)
         {
             this.driver = driver;
         }
-        public EMTextBox ChooseTextBoxMenu()
+        public EMTextBoxMenu ChooseTextBoxMenu()
         {
             driver.FindElement(textBox).Click();
             return this;
         }
-        public EMTextBox FillTextBoxMenu()
+        public EMTextBoxMenu FillTextBoxMenu()
         {
+            
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.FindElement(textBox).Click();
             driver.FindElement(textBoxName).SendKeys("Winston");
