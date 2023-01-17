@@ -67,17 +67,37 @@ namespace TestSeleniumTraining
                 .ChooseHomeLink()
                 .ChooseHomeLink2();
         }*/
-    
-        [Test]
-        public void AlertsModalDialogsMenu()
+
+        /* [Test]
+         public void AlertsModalDialogsMenu()
+         {
+             var elements = new AlertsMenu(driver)
+                 .ChooseAlertsMenu();
+             var element = new  AMModalDialogs(driver)
+                 .ModalDialogs();
+         }*/
+        /*[Test]
+        public void Alerts()
         {
             var elements = new AlertsMenu(driver)
                 .ChooseAlertsMenu();
-            var element = new  AMModalDialogs(driver)
-                .ModalDialogs();
+            var element = new AMAlerts(driver)
+               // .ClickButtonToSeeAlert()
+                .ClickButtonToSeeAlertAfter5Seconds()
+                .ClickButtonToSeeAlertConfirmBox()
+                .ClickButtonToSeeAlertBoxWillAppear();
+        }*/
+        [Test]
+        public void AlertsBrowserWindow()
+        {
+            var elements = new AlertsMenu(driver)
+                .ChooseAlertsMenu();
+            var element = new AMBrowserWindow(driver)
+                //.openNewTab();
+                .OpenNewWindow();
         }
-        
-        
+
+
 
         [TearDown]
         public void TearDown()
