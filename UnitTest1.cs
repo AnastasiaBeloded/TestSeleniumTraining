@@ -1,6 +1,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using TestSeleniumTraining.Alerts;
 using TestSeleniumTraining.Elements;
+using TestSeleniumTraining.Forms;
 
 namespace TestSeleniumTraining
 {
@@ -55,15 +57,26 @@ namespace TestSeleniumTraining
              var element = new EMButtonsMenu(driver)
                   .ButtonsMenu();
          }*/
-        [Test]
+        /*[Test]
         public void ElementsLinksMenu()
         {
             var elements = new ElementsMenu(driver)
                 .ChooseElementsMenu();
             var element = new EMLinksMenu(driver)
                 .ChooseLinksMenu()
-                 .ChooseHomeLink();
+                .ChooseHomeLink()
+                .ChooseHomeLink2();
+        }*/
+    
+        [Test]
+        public void AlertsModalDialogsMenu()
+        {
+            var elements = new AlertsMenu(driver)
+                .ChooseAlertsMenu();
+            var element = new  AMModalDialogs(driver)
+                .ModalDialogs();
         }
+        
         
 
         [TearDown]
