@@ -36,17 +36,7 @@ namespace TestSeleniumTraining.Widgets
             int atri = Int32.Parse(atribute);
 
             IWebElement slider = driver.FindElement(sliderMoving);
-          //  IWebElement sliderTo = driver.FindElement(sliderMovingTo);
-            
-           // int width = slider.Size.Width;
-          //  Actions actions = new Actions(driver);
-           // actions.ClickAndHold(slider).SendKeys(Keys.Control + Keys.ArrowRight);
-           // actions.Build().Perform();
-            // actions.MoveToElement(slider, ((width * x) / 100), 0).Click();
-            // actions.Build().Perform();
-
-            // ScrollToElement
-
+          
             Actions action = new Actions(driver);
             action.Click(slider).Build().Perform();
             Thread.Sleep(5);
