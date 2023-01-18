@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using TestSeleniumTraining.Alerts;
 using TestSeleniumTraining.Elements;
 using TestSeleniumTraining.Forms;
+using TestSeleniumTraining.Widgets;
 
 namespace TestSeleniumTraining
 {
@@ -87,7 +88,7 @@ namespace TestSeleniumTraining
                 .ClickButtonToSeeAlertConfirmBox()
                 .ClickButtonToSeeAlertBoxWillAppear();
         }*/
-        [Test]
+        /*[Test]
         public void AlertsBrowserWindow()
         {
             var elements = new AlertsMenu(driver)
@@ -95,11 +96,21 @@ namespace TestSeleniumTraining
             var element = new AMBrowserWindow(driver)
                 //.openNewTab();
                 .OpenNewWindow();
+        }*/
+        [Test]
+        public void Slider()
+        {
+            var elements = new WidgetsMenu(driver)
+                .openWidgetsMenu();
+            var element = new WMSliderMenu(driver)
+                .openSliderMenu()
+                .MovingSlider();
         }
 
 
 
-        [TearDown]
+
+    [TearDown]
         public void TearDown()
         {
             //driver.Quit();
