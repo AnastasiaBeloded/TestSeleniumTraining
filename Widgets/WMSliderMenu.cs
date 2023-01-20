@@ -12,7 +12,7 @@ namespace TestSeleniumTraining.Widgets
     internal class WMSliderMenu
     {
         private IWebDriver driver;
-        private IWebElement elementToSlide;
+        
         private readonly By sliderMenu = By.XPath("//span[normalize-space()='Slider']");
         private readonly By sliderMoving = By.XPath("//input[@type='range']");
         private readonly By sliderMovingFrom = By.CssSelector("input[value='25'][type='range']");

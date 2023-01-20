@@ -97,7 +97,7 @@ namespace TestSeleniumTraining
                 //.openNewTab();
                 .OpenNewWindow();
         }*/
-        [Test]
+       /* [Test]
         public void Slider()
         {
             var elements = new WidgetsMenu(driver)
@@ -105,12 +105,21 @@ namespace TestSeleniumTraining
             var element = new WMSliderMenu(driver)
                 .openSliderMenu()
                 .MovingSlider();
+        }*/
+        [Test]
+        public void DataPicker()
+        {
+            var elements = new WidgetsMenu(driver)
+                .openWidgetsMenu();
+            var element = new WMDataPicker(driver)
+                .openDatePickerMenu()
+                //.selectAndFillDate()
+                .selectDate();
         }
 
 
 
-
-    [TearDown]
+        [TearDown]
         public void TearDown()
         {
             //driver.Quit();
