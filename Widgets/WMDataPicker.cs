@@ -20,7 +20,9 @@ namespace TestSeleniumTraining.Widgets
         private readonly By selectDatePickerMenu = By.XPath("//span[normalize-space()='Date Picker']");
         private readonly By selectDateInput = By.CssSelector("#datePickerMonthYearInput");
         private readonly By selectDatePickerContainer = By.XPath("//div[@class='react-datepicker__month-container']");
-
+        private readonly By selectDatePickerMonthContainer = By.XPath("//select[@class='react-datepicker__month-select']");
+        private readonly By selectDatePickerYearContainer = By.XPath("//select[@class='react-datepicker__year-select']");
+        private readonly By selectDateListBox = By.XPath("//div[@role='listbox']");
 
         public WMDataPicker openDatePickerMenu()
         {
@@ -40,37 +42,20 @@ namespace TestSeleniumTraining.Widgets
         }
         public WMDataPicker selectDate()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.FindElement(selectDateInput).Click();
-            //IWebElement e = driver.FindElement(selectDatePickerContainer);
-            
+            Thread.Sleep(100);
+            driver.FindElement(selectDatePickerMonthContainer).Click();
+            Thread.Sleep(100);
+            driver.FindElement(By.XPath("//option[@value='11']")).Click();
+            Thread.Sleep(100);
+            driver.FindElement(selectDatePickerYearContainer).Click();
+            Thread.Sleep(100);
+            driver.FindElement(By.XPath("//option[@value='2025']")).Click();
+            Thread.Sleep(100);
+            driver.FindElement (selectDateListBox).Click();
+            Thread.Sleep(100);
+            driver.FindElement(By.CssSelector("div[class$='react-datepicker__day react-datepicker__day--027 react-datepicker__day--weekend']")).Click() ;
 
-            IWebElement m = driver.FindElement(By.XPath("//select[@class='react-datepicker__month-select']"));
-
-            Select s = new Select(m);
-            s.SelectByVisibleText("Jan");
-          //  Thread.Sleep(1000);
-            // select day
-           /* driver.findElement(By.xpath("//td[not(contains(@class,'ui−datepicker− month'))]/a[text()='" + frdate + "']")).click();
-            Thread.sleep(1000);
-            // choose to date
-            driver.findElement(By.xpath("//input[@id='to']")).click();
-            Thread.sleep(1000);
-            // choose month from dropdown
-            WebElement n = driver
-            .findElement(By.xpath("//div/select[@class='ui− datepicker−month']"));
-            Select sel = new Select(n);
-            sel.selectByVisibleText("Feb");
-            Thread.sleep(1000);
-            // select day
-            driver.findElement(By.xpath("//td[not(contains(@class,'ui−datepicker− month'))]/a[text()='" + todate + "']")).click();
-            Thread.sleep(1000);
-
-
-
-
-
-            //driver.FindElement(By.LinkText(today.Day.ToString("10/01/2021"))).Click();*/
 
 
             return this;
