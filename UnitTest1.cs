@@ -1,8 +1,10 @@
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TestSeleniumTraining.Alerts;
 using TestSeleniumTraining.Elements;
 using TestSeleniumTraining.Forms;
+using TestSeleniumTraining.Interactions;
 using TestSeleniumTraining.Widgets;
 
 namespace TestSeleniumTraining
@@ -22,16 +24,16 @@ namespace TestSeleniumTraining
 
         }
 
-        /* [Test]
+         [Test]
          public void ElementsTextBoxTest()
          {
              var elements = new ElementsMenu(driver)
                  .ChooseElementsMenu();
-             var element = new EMTextBox(driver)
+             var element = new EMTextBoxMenu(driver)
                 .FillTextBoxMenu();
              driver.Close();
-         }*/
-        /* [Test]
+         }
+         [Test]
          public void ElementsCheckBoxTest()
          {
              var elements = new ElementsMenu(driver)
@@ -40,16 +42,17 @@ namespace TestSeleniumTraining
                    .ChooseCheckBoxMenu()
                    .FillCheckBoxMenu()
                    .tryCheckbox();
-             //driver.Close();
+             driver.Close();
          }
-         /*[Test]
+         [Test]
          public void ElementsRadioButtonMenu()
          {
              var elements = new ElementsMenu(driver)
                  .ChooseElementsMenu();
              var element = new EMRadioButtonMenu(driver)
                   .RadioButton();
-         }
+            driver.Close();
+        }
          [Test]
          public void ElementsButtonMenu()
          {
@@ -57,8 +60,9 @@ namespace TestSeleniumTraining
                  .ChooseElementsMenu();
              var element = new EMButtonsMenu(driver)
                   .ButtonsMenu();
-         }*/
-        /*[Test]
+            driver.Close();
+        }
+        [Test]
         public void ElementsLinksMenu()
         {
             var elements = new ElementsMenu(driver)
@@ -67,17 +71,20 @@ namespace TestSeleniumTraining
                 .ChooseLinksMenu()
                 .ChooseHomeLink()
                 .ChooseHomeLink2();
-        }*/
+            driver.Close();
+        }
 
-        /* [Test]
+         [Test]
          public void AlertsModalDialogsMenu()
          {
              var elements = new AlertsMenu(driver)
                  .ChooseAlertsMenu();
              var element = new  AMModalDialogs(driver)
                  .ModalDialogs();
-         }*/
-        /*[Test]
+            driver.Close();
+        }
+        
+         [Test]
         public void Alerts()
         {
             var elements = new AlertsMenu(driver)
@@ -87,34 +94,54 @@ namespace TestSeleniumTraining
                 .ClickButtonToSeeAlertAfter5Seconds()
                 .ClickButtonToSeeAlertConfirmBox()
                 .ClickButtonToSeeAlertBoxWillAppear();
-        }*/
-        /*[Test]
+            driver.Close();
+        }
+        [Test]
         public void AlertsBrowserWindow()
         {
             var elements = new AlertsMenu(driver)
                 .ChooseAlertsMenu();
             var element = new AMBrowserWindow(driver)
-                //.openNewTab();
+                 .openNewTab()
                 .OpenNewWindow();
-        }*/
-       /* [Test]
-        public void Slider()
-        {
-            var elements = new WidgetsMenu(driver)
-                .openWidgetsMenu();
-            var element = new WMSliderMenu(driver)
-                .openSliderMenu()
-                .MovingSlider();
-        }*/
+            driver.Close();
+        }
+         [Test]
+         public void Slider()
+         {
+             var elements = new WidgetsMenu(driver)
+                 .openWidgetsMenu();
+             var element = new WMSliderMenu(driver)
+                 .openSliderMenu()
+                 .MovingSlider();
+            driver.Close();
+        }
+         [Test]
+         public void DataPicker()
+         {
+             var elements = new WidgetsMenu(driver)
+                 .openWidgetsMenu();
+             var element = new WMDataPicker(driver)
+                 .openDatePickerMenu()
+                 //.selectAndFillDate()
+                 .selectDate();
+            driver.Close();
+        }
         [Test]
-        public void DataPicker()
+        
+        
+        public void Interactions()
         {
-            var elements = new WidgetsMenu(driver)
-                .openWidgetsMenu();
-            var element = new WMDataPicker(driver)
-                .openDatePickerMenu()
-                //.selectAndFillDate()
-                .selectDate();
+            var elements = new IM(driver)
+                .openInteractionsMenu();
+            var element = new IMSelectable(driver)
+                .openSelectableMenu()
+                .workWithList()
+                .workWithGrid();
+            driver.Close();
+
+
+
         }
 
 
