@@ -30,11 +30,12 @@ namespace TestSeleniumTraining.Alerts
             Thread.Sleep(1000);
             driver.SwitchTo().Window(driver.WindowHandles[1]);
             driver.Close();
+            driver.SwitchTo().Window(driver.WindowHandles[0]);
             return this;
         }
         public AMBrowserWindow OpenNewWindow()
         {
-            driver.FindElement(browserWindow).Click();
+           // driver.FindElement(browserWindow).Click();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.FindElement(newWindow).Click();
             Thread.Sleep(1000);
@@ -54,6 +55,9 @@ namespace TestSeleniumTraining.Alerts
             }
 
             driver.Close();
+            driver.SwitchTo().Window(driver.WindowHandles[0]);
+           
+            
             return this;
         }
     }

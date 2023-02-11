@@ -140,8 +140,6 @@ namespace TestSeleniumTraining
                 .workWithGrid();
             driver.Close();
 
-
-
         }
 
 
