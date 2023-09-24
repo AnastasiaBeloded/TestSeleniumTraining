@@ -9,20 +9,11 @@ using TestSeleniumTraining.Widgets;
 
 namespace TestSeleniumTraining
 {
-    public class Tests
+    [TestFixture]
+    //[Parallelizable]
+    [Parallelizable(scope: ParallelScope.All)]
+    public class Tests:TestBase
     {
-
-        public IWebDriver driver;
-        [SetUp]
-
-        public void Setup()
-        {
-            driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://demoqa.com/");
-            driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-
-        }
 
          [Test]
          public void ElementsTextBoxTest()
@@ -144,11 +135,7 @@ namespace TestSeleniumTraining
 
 
 
-        [TearDown]
-        public void TearDown()
-        {
-            //driver.Quit();
-        }
+       
     }
 }
 
