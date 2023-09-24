@@ -16,6 +16,7 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
     <PackageReference Include="Selenium.Support" Version="4.7.0" />
     <PackageReference Include="WebDriver.ChromeDriver.win32" Version="108.0.5359.71" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="117.0.5938.9200" />
   </ItemGroup>
 
 </Project>
